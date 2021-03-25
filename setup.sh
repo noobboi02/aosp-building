@@ -29,7 +29,7 @@ repo sync -c -q --force-sync --optimized-fetch --no-tags --no-clone-bundle --pru
 rm -rf .repo
 
 # Sync device tree and stuffs
-git clone https://github.com/Gabriel260/android_device_samsung_a10-common -b crdroid-arm32 device/samsung
+git clone https://github.com/Gabriel260/android_device_samsung_a10-2 device/samsung/a10
 git clone https://github.com/Gabriel260/proprietary_vendor_samsung_a10-common -b lineage-18.1-arm32 vendor/samsung
 git clone --depth=1 https://github.com/geckyn/android_kernel_samsung_exynos7885 kernel/samsung/exynos7885
 git clone https://github.com/Gabriel260/android_hardware_samsung-2 hardware/samsung
