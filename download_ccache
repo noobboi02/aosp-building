@@ -37,7 +37,7 @@ tg_sendText "Downloading Ccache"
 # time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/$CCACHE_FILE
 
 # METHOD 2: Download using Google Drive direcly (I have a premium account..HAHA):
-time rclone copy aosp:$CCACHE_FILE /tmp/
+time rclone copy aosp:ccache1.tar.gz /tmp/
 cd /tmp # Where ccache has been downloaded
 
 
