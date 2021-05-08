@@ -27,8 +27,8 @@ lunch lineage_a10-userdebug
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-ccache -M 20G # It took less than 6 GB for less than 2 hours in 2 builds for Samsung A10
-ccache -o compression=true # Will save times and data to download and upload ccache, also negligible performance issue
+ccache -M 20G
+ccache -o compression=true
 ccache -z
 
 tg_sendText "Starting Compilation.."
