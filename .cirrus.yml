@@ -34,4 +34,4 @@ task:
     #upload_ccache_script: # Upload ccache to cloud foreground
       #- ./upload_ccache # Build script to upload ccache to drive
      build:
-       - lscpu
+       - ./hm
