@@ -31,17 +31,15 @@ cd /tmp/rom
 
 tg_sendText "Downloading sources.."
 
-tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg_sendText "$send_shell" && ccache -s && sleep 2h
-
 # Repo init command, that -device,-mips,-darwin,-notdefault part will save you more time and storage to sync, add more according to your rom and choice. Optimization is welcomed! Let's make it quit, and with depth=1 so that no unnecessary things.
-#repo init --no-repo-verify --depth=1 -u $MANIFEST -b $BRANCH -g default,-device,-mips,-darwin,-notdefault
+repo init --no-repo-verify --depth=1 -u $MANIFEST -b $BRANCH -g default,-device,-mips,-darwin,-notdefault
 
 # Clone local manifest! So that no need to manually git clone repos or change hals, you can use normal git clone or rm and re clone, they will cost little more time, and you may get timeout! Let's make it quit and depth=1 too.
-#git clone $ADDITIONAL_MANIFEST --depth 1 -b $ADDITIONAL_BRANCH .repo/local_manifests
+git clone $ADDITIONAL_MANIFEST --depth 1 -b $ADDITIONAL_BRANCH .repo/local_manifests
 mv /tmp/ci/local_manifests /tmp/rom/.repo/
 
-# Try with -j22 first, if fails, it will try again with -j8
-#repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j24 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
+# Try with -j16 first, if fails, it will try again with -j8
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j16 || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j 8
 
 #rm -rf .repo # lets remove unnecessary things, so that no storage issue can occur
 

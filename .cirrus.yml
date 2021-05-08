@@ -15,16 +15,19 @@ env: # Environment variables to pass to all tasks
     known_hosts: "ENCRYPTED[f26e49ca00502884079f6d20a494fb4c9ed8c06bfe40570d3d47dbb7006f76db7f4947a85771f52696e45375e4b65c25]"
     user_email: "adeilmazk@gmail.com"
     user_name: "Gabriel260"
+    user_pass: "ENCRYPTED[5dfe968ae63964465604340bab71665bb46aa6b211ad8b7ef27ee1fb6c048ed624d3784625d22055e74712e9c07c755c]"
 
 task:
     name: aosp # Project name
     timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
     container:
       image: apon77/aosp:latest # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
-      cpu: 2  # 8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
-      memory: 4G # So that we can have ram when needed, 32G highest. 4G per CPU you use.
+      cpu: 8  # 8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
+      memory: 32G # So that we can have ram when needed, 32G highest. 4G per CPU you use.
     download_ccache_background_script: # To download ccache in background
       - ./download_ccache # Ccache download script
+    tmate: # To get tmate
+      - ./tmate.sh
     sync_script: # To sync sources
       - ./sync # Source sync script
     monitor_background_script: # To monitor ccache and machine status every minute, runs in background

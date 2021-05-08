@@ -14,6 +14,34 @@ curl -F chat_id=$CHAT_ID -F document=@${1} -F parse_mode=markdown https://api.te
 
 cd /tmp/rom # Depends on where source got synced
 
+sudo apt install expect -y
+expect -c "
+spawn git clone https://github.com/Gabriel260/android_device_samsung_a10-common device/samsung 
+expect \"Username\"
+send \"${user_name}\r\"
+expect \"Password\"
+send \"${user_pass}\r\"
+expect \"Resolving deltas: 100%\"
+set timeout -10
+interact"
+
+sleep 3s
+
+expect -c "
+spawn git clone https://github.com/Gabriel260/proprietary_vendor_samsung_a10-common vendor/samsung 
+expect \"Username\"
+send \"${user_name}\r\"
+expect \"Password\"
+send \"${user_pass}\r\"
+expect \"Resolving deltas: 100%\"
+set timeout -10
+interact"
+
+sleep 3s
+
+git clone https://github.com/Gabriel260/android_hardware_samsung-2 hardware/samsung
+git clone https://github.com/geckyn/android_kernel_samsung_exynos7885 kernel/samsung/exynos7885 --depth=1
+
 tg_sendText "Lunching"
 # Normal build steps
 . build/envsetup.sh
