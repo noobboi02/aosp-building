@@ -33,7 +33,7 @@ tg_sendText "Downloading Ccache"
 # METHOD 1: Download using aria2c:
 # Where ccache is located, use your own if you don't want to use my "prebuilt ccaches" xD
 # cd /tmp
-# url=https://young-lake-caef.gabriel15747.workers.dev/$CCACHE_FILE
+# url=https://young-lake-caef.gabriel15747.workers.dev/0:/ccache/$CCACHE_FILE
 # time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/$CCACHE_FILE
 
 # METHOD 2: Download using Google Drive direcly (I have a premium account..HAHA):
