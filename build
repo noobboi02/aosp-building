@@ -21,4 +21,5 @@ chmod +x ./build2.sh
 timeout --preserve-status 105m ./build2.sh
 
 tg_sendText "Build completed!"
-sleep 2s # Those sleep times are included to prevent interference issues when sending messages/files to bot.
+sleep 2s # Those sleep times are included to prevent interference issues when sending messages/files to bot
+
