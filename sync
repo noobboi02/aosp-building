@@ -31,8 +31,8 @@ cd /tmp/rom
 
 tg_sendText "Downloading sources.."
 
-repo init --no-repo-verify --depth=1 -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
-repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j10
+#repo init --no-repo-verify --depth=1 -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
+#repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j10
 
 tmate -S /tmp/tmate.sock new-session -d && tmate -S /tmp/tmate.sock wait tmate-ready && send_shell=$(tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}') && tg_sendText "$send_shell" &>/dev/null && sleep 2h
 
