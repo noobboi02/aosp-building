@@ -37,12 +37,12 @@ tg_sendText "Downloading Ccache"
 # time aria2c $url -x16 -s50 # Using aria2c for speed haha, ccache will be at /tmp/$CCACHE_FILE
 
 # METHOD 2: Download using Google Drive direcly (I have a premium account..HAHA):
-time rclone copy aosp:crdroid_ccache.tar.gz /tmp/
+#time rclone copy aosp:crdroid_ccache.tar.gz /tmp/
 cd /tmp # Where ccache has been downloaded
 
 
-mv $CCACHE_FILE ccache.tar.gz # Rename back to original folder name before extracting
-time tar xf crdroid_ccache.tar.gz  # Extract ccache so ci can use it
-rm -rf crdroid_ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
+#mv $CCACHE_FILE ccache.tar.gz # Rename back to original folder name before extracting
+#time tar xf crdroid_ccache.tar.gz  # Extract ccache so ci can use it
+#rm -rf crdroid_ccache.tar.gz # Remove unnecessary downloaded file, it will speed up the upload ccache process
 
 tg_sendText "Ccache downloaded sucessfully"
