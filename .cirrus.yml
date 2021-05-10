@@ -10,12 +10,12 @@ env: # Environment variables to pass to all tasks
     BOT_TOKEN: "ENCRYPTED[0ccc9cd11a222875c890520c8a15469a7b1889a8df6cedead54f7ea9d09f2fba6edceca4c8a2a7bea84fde041dc800f1]"
     
     # Github variables needed so as to be able to clone private repos too without authenticating. Useful for building official roms which have private repos. The first 3 variables needs to be encrypted!! You can hide your email and username by encrypting them too if you want but that's not neccessary.
-    id_rsa_pub: "ENCRYPTED[bf1e5e38f317d2ab4dc26e419a51fae5daeb46a01490a1c97e5e42457720d8916196019d392f1c96fe64a9b4a530f53c]"
-    id_rsa: "ENCRYPTED[7c6a7f4d5993ba29e9d83adbe48d63d5bdb97985d6234a63164f8464219fdc71905abaa6bd5e1c84914b6daa4b4c7af7]"
-    known_hosts: "ENCRYPTED[f26e49ca00502884079f6d20a494fb4c9ed8c06bfe40570d3d47dbb7006f76db7f4947a85771f52696e45375e4b65c25]"
+    id_rsa_pub: "empty"
+    id_rsa: "empty"
+    known_hosts: "empty"
     user_email: "chrissunil6@gmail.com"
     user_name: "chrissunil"
-    user_pass: "ENCRYPTED[5dfe968ae63964465604340bab71665bb46aa6b211ad8b7ef27ee1fb6c048ed624d3784625d22055e74712e9c07c755c]"
+    user_pass: "empty"
 
 task:
     name: aosp # Project name
