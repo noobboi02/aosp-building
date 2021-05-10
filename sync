@@ -14,22 +14,22 @@ curl -s "https://api.telegram.org/bot$BOT_TOKEN/sendMessage" \
 }
 
 # Set up github's priviledged access
-mkdir -p ~/.ssh
-chmod 700 ~/.ssh
-echo "$id_rsa" > ~/.ssh/id_rsa
-echo "$id_rsa_pub" > ~/.ssh/id_rsa.pub
-chmod 400 ~/.ssh/id_rsa
+# mkdir -p ~/.ssh
+# chmod 700 ~/.ssh
+# echo "$id_rsa" > ~/.ssh/id_rsa
+# echo "$id_rsa_pub" > ~/.ssh/id_rsa.pub
+# chmod 400 ~/.ssh/id_rsa
 git config --global user.email "$user_email"
 git config --global user.name "$user_name"
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_rsa
-echo "$known_hosts" > ~/.ssh/known_hosts
+# eval "$(ssh-agent -s)"
+# ssh-add ~/.ssh/id_rsa
+# echo "$known_hosts" > ~/.ssh/known_hosts
 
 
 mkdir -p /tmp/rom # Where to sync source
 cd /tmp/rom
 
-tg_sendText "Downloading sources.."
+tg_sendText "Starting up this beast.."
 
 #repo init --no-repo-verify --depth=1 -u git://github.com/LineageOS/android.git -b lineage-18.1 -g default,-device,-mips,-darwin,-notdefault
 #repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j10
