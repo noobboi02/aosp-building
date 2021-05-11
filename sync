@@ -25,6 +25,8 @@ git config --global user.name "$user_name"
 # ssh-add ~/.ssh/id_rsa
 # echo "$known_hosts" > ~/.ssh/known_hosts
 
+mkdir -p ~/.config/rclone
+echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
 
 mkdir -p /tmp/rom # Where to sync source
 cd /tmp/rom
