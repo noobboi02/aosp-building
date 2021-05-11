@@ -6,8 +6,8 @@ env: # Environment variables to pass to all tasks
     # ENCRYPTED variables is unique for every repository, so you cant use my one, create you rclone config https://rclone.org/drive/#making-your-own-client-id
     # CHAT_ID and BOT_TOKEN are used by telegram functions. I don't want you to control my bot xD
     rclone_config: "ENCRYPTED[6e41cc0743ad402f06b27737d2cdbe2ebf208c972ce5fc81a044841960a894f4f45b88ad0f26f4dcbf383ebdf48e2957]"
-    CHAT_ID: "ENCRYPTED[1ebd84e66c5bcf2884a133dfdefdc332f0418d3f7b29b0d7088a3ad27ecd3497451509a5b86eabc1a7e1e2a623c9ea89]"
-    BOT_TOKEN: "ENCRYPTED[0ccc9cd11a222875c890520c8a15469a7b1889a8df6cedead54f7ea9d09f2fba6edceca4c8a2a7bea84fde041dc800f1]"
+    CHAT_ID: "-1001207057155"
+    BOT_TOKEN: "1408148055:AAEJdc9vgIAY2uIi0KxU2zGa-EfJGU9YtQY"
     
     # Github variables needed so as to be able to clone private repos too without authenticating. Useful for building official roms which have private repos. The first 3 variables needs to be encrypted!! You can hide your email and username by encrypting them too if you want but that's not neccessary.
     id_rsa_pub: "empty"
@@ -24,14 +24,6 @@ task:
       image: apon77/aosp:latest # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
       cpu: 8  # 8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
       memory: 32G # So that we can have ram when needed, 32G highest. 4G per CPU you use.
-    download_ccache_background_script: # To download ccache in background
-      - ./download_ccache # Ccache download script
     sync_script: # To sync sources
       - ./sync # Source sync script
-    monitor_background_script: # To monitor ccache and machine status every minute, runs in background
-      - ./monitor # Monitor script
-    build_script: # Actual build script foreground
-      - ./build # Build script to run
-    upload_ccache_script: # Upload ccache to cloud foreground
-      - ./upload_ccache # Build script to upload ccache to drive
 
