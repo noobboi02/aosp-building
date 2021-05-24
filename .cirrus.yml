@@ -4,7 +4,7 @@ env: # Environment variables to pass to all tasks
 
     # For rclone with google drive or any cloud! After first commit pushing, login to https://cirrus-ci.com , click top left corner 3 dot menu, click repository(yourname/aosp-builder) > Repository Settings > Secured Variables > enter content of ~/.config/rclone/rclone.conf (from pc where you setup rclone) > ENCRYPT, copy that ENCRYPTED hash
     # ENCRYPTED variables is unique for every repository, so you cant use my one, create you rclone config https://rclone.org/drive/#making-your-own-client-id
-    # CHAT_ID and BOT_TOKEN are used by telegram functions. I don't want you to control my bot xD
+    # CHAT_ID and BOT_TOKEN are used by telegram functions. I don't want you to control my bot 
     rclone_config: "ENCRYPTED[9140877c26288f7bb903511bb5543286e8c0b952a6e39a5a6160909bd52b20a439594158fc3ae91174701a8d78739811]"
     CHAT_ID: "-1001483531624"
     BOT_TOKEN: "1716922014:AAG7Ia8XFO-jHAfFhwkEBD7_eG-d9QJkIrg"
